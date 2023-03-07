@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+    head
+        title=artwork.artist 
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        include ../partials/headers
+        h1(id="username")= artwork.artist
+        div(class="follow") 
+            each user in users 
+                if user.username == artwork.artist
+                    a(href="/login/" + user.username + "/followers")= "Followers: " + user.followers.length
+                    |
+                    |
+                    |
+                    a(href="/login/" + user.username + "/following")= "Following: " + user.following.length
+        div(class="middle")
+            each user in users 
+                if user.username == session.username 
+                    if session.username != artwork.artist
+                        if (session.loggedin)
+                            if user.following.includes(artwork.artist)
+                                button(id="follow")= "Unfollow"
+                            else    
+                                button(id="follow")= "Follow"
+                    else  
+                        if (session.loggedin)  
+                            if user.profile == "artist"  
+                                a(href="/login/" + session.username + "/addArtwork") Add Artwork
+                                br
+                                button(id="switch")= "Switch to "
+                                    span(id="switchTo")= "Patron"
+                                    span= " Account"
+                                br
+                            else 
+                                button(id="switch")= "Switch to "
+                                    span(id="switchTo")= "Artist"
+                                    span= " Account"
+                                br
+        if artwork.image != undefined 
+            div(class="column")
+                each user in users 
+                    if user.username == artwork.artist
+                        each work in user.artworks 
+                            img(src=work.image)
+                
+        script(src="/js/person.js")
+
+        
+        
+            

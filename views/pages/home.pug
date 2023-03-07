@@ -1,0 +1,23 @@
+html(lang="en")
+    head
+        link(rel='stylesheet', href='/css/styles.css')
+    body  
+        include ../partials/headers
+        
+        h1 Open Source Gallery   
+        div(class="row")
+            div(class="column")
+                each artwork in artworks    
+                    img(src=artwork.image)
+                    a(href="/login/" + artwork.artist)= artwork.artist
+                    br
+                    span= "Artwork Name: " + artwork.name
+                    br
+                    span= "Year: " + artwork.year 
+                    br
+                    span= "Category: " + artwork.category 
+                    br
+                    span= "Medium: " + artwork.medium 
+                    br
+                    span= "Description: " + artwork.description
+            

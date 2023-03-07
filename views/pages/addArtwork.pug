@@ -1,0 +1,31 @@
+doctype html
+html(lang="en") 
+    head
+        title Add a new artwork
+        link(rel='stylesheet', href='/css/styles.css')
+    body 
+        include ../partials/headers
+        h1(id="username")= session.username
+        h1= "Add a New Artwork"
+        div(class="middle")
+            p
+                | Image Name: 
+                input(type='text', id='name')
+                br
+                | Image Year: 
+                input(type='text', id='year')
+                br
+                | Image Category: 
+                input(type='text', id='category')
+                br
+                | Image Medium: 
+                input(type='text', id='medium')
+                br
+                | Image Description: 
+                input(type='text', id='description')
+                br
+                | Image URL: 
+                input(type='text', id='url')
+                br
+                button(id='addArtwork') Add Artwork
+        script(src="/js/addArtwork.js")

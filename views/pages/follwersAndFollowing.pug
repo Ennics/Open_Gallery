@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        title=name
+        link(rel='stylesheet', href='/css/styles.css')
+    body
+        include ../partials/headers
+        h1(id="username")= name
+        div(class="follow") 
+            if type == "followers"
+                h2= "Followers"
+                each follower in followers 
+                    a(href="/login/" + follower)= follower
+                    br
+            else    
+                h2= "Following"
+                each follower in following 
+                    a(href="/login/" + follower)= follower
+                    br
+        script(src="/js/person.js")
+
+        
+        
+            
