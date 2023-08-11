@@ -1,7 +1,6 @@
 # Open_Gallery
 - General Information -
 Written by: Nicholas Nicolaev 
-Email: nicholasnicolaev@cmail.carleton.ca 
 
 - Description -
 An open gallery website. Users can register a new account, log into an existing account or view artworks as a guest that is logged out with limited functionality. Once registered, a user can log in with a unique username and a password of their choice. All new accounts are “patron” accounts that only allow the user to follow other users with no ability to add artwork of their own. The user can switch to an “artist” account that will allow them to add their own artwork and they may switch back to a patron account whenever they please. The user can follow and unfollow other accounts and view their profiles. All artworks that are uploaded are saved in the database.
@@ -19,6 +18,3 @@ An open gallery website. Users can register a new account, log into an existing 
 - Overall Design -
 Starting with the files, they are all organized in separate folders for proper separation of html
 (pug), css and javascript. The client side javascript is handled in the public/js folder and is responsible for some of the buttons functionality across the website. The client communicates with the server and updates the database where necessary. If there are any errors, a proper error code is sent by the server along with an appropriate message. A design choice that would have made the code even more organized would have been to add routers to handle the pug pages instead of hard coding them all into the server.js file. This would have resulted in a much more organized server.js file.
-
-- Project Demo -
-YouTube unlisted link: https://youtu.be/mwQ4N0R40q0
